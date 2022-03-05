@@ -1,0 +1,43 @@
+<div *ngFor="let post of posts">
+
+    <div>{{ post.name }} {{ post.content }}  <br>
+    {{ moment(post.created_at).startOf('hour').fromNow() }}
+    <a href="#" (click)="userPostLike(post.id)" data-toggle="modal" data-target="#userLike">{{ post.likes.length }} people</a> like this
+
+    <form [formGroup]="likeForm">
+        <button (click)="like(post.id); post.clicked = true;" [disabled]="clicked" type="submit" class="btn btn-primary"><i class="fas fa-thumbs-up"></i></button>
+    </form>
+
+    <form>
+        <button (click)="unlike(post.id)" type="submit" class="btn btn-danger"><i class="fas fa-thumbs-down"></i></button>
+    </form>
+    </div>
+ 
+
+    
+    <!-- ovo radi   <p *ngFor="let like of post.likes">
+            {{ like.user_id }}
+    </p> -->
+
+
+    <!-- Modal -->
+<div class="modal fade" id="userLike" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Likes of this post</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" *ngFor="let userLike of usersLike">
+          <p><img src="{{ imagePath }}/{{ userLike.users.image }}" width="30px" height="30px">{{ userLike.users.name }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+</div>

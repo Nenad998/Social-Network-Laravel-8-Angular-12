@@ -1,0 +1,13 @@
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+}
+.form-login{
+    padding-top: 16vh;
+}
+.login-form-bgrd{
+    background: #eeeee4;
+    padding: 20px;
+}

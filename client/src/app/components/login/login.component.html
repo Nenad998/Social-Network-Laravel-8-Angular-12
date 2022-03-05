@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{imageSrc}}" class="center-block">
+        </div>
+        <div class="col-md-6 form-login">
+            <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm" class="login-form-bgrd">
+                <p class="text-danger text-center" *ngIf="badCreds">{{ badCreds }}</p>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" ngModel>
+                    <p class="text-danger pl-1" *ngIf="errors.email">{{ errors.email }}</p>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" ngModel>
+                    <p class="text-danger pl-1" *ngIf="errors.password">{{ errors.password }}</p>
+                    <a routerLink="/forgot-password" class="mt-2">Forgot password?</a>
+                    <p class="mt-2">Don't have account? <a routerLink="/register">Register</a> </p>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form> 
+        </div>
+    </div>
+</div>

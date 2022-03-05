@@ -1,0 +1,68 @@
+
+ <div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <!-- <div class="sidebar-heading"></div> -->
+      <div class="list-group list-group-flush text-left mt-5 border-0">
+       <!--  <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a> -->
+        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fas fa-user-edit fa-lg mr-2"></i>Edit Profile</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fas oo fa-user-friends fa-lg mr-2"></i>Friends</a>
+        <a routerLink="./members" class="list-group-item list-group-item-action bg-light"><i class="fas oo fa-users fa-lg mr-2"></i>Members</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><i class="fas oo fa-comments fa-lg mr-2"></i>Message</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a routerLink="./home" class="list-group-item list-group-item-action bg-light">Home</a>
+        <a routerLink="./friends" class="list-group-item list-group-item-action bg-light">Friends</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+  
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Menu</button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- pocetak notifications  -->
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Notifications
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          
+
+            <!-- kraj notifications  -->
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <p class="nav-link" href="#">Welcome {{ user.name }} <img src="{{ imagePath }}/{{ user.image }}" width="30px" height="30px"> <span class="sr-only">(current)</span></p>
+            </li>
+          <!--   <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li> -->
+            <li class="nav-item">
+              <button class="btn btn-info" (click)="logout()">Logout</button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+        <!-- <app-dashboard></app-dashboard> --> 
+        <router-outlet></router-outlet>
+    </div>
+    <!-- /#page-content-wrapper -->
+  </div>
+  <!-- /#wrapper -->
